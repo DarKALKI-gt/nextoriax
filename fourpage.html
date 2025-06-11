@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Stream Suggestion</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fcff;
+      margin: 0;
+      padding: 30px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #ecf0f1;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .suggestion {
+      background: #e8f5e9;
+      border-left: 5px solid #27ae60;
+      padding: 15px;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Top Subjects</h1>
+    <ul id="subjectList"></ul>
+    <div id="careerSuggestion" class="suggestion"></div>
+  </div>
+
+  <script>
+    const subjectList = document.getElementById('subjectList');
+    const suggestionBox = document.getElementById('careerSuggestion');
+
+    // Get data from localStorage
+    const topSubjects = JSON.parse(localStorage.getItem("topSubjects")) || [];
+
+    if (topSubjects.length === 0) {
+      subjectList.innerHTML = "<li>No result data found. Please take the test first.</li>";
+    } else {
+      // Show top 3 subjects
+      topSubjects.slice(0, 3).forEach(subject => {
+        subjectList.innerHTML += `<li>${subject}</li>`;
+      });
+
+      const top = topSubjects[0];
+      let suggestion = "";
+
+      switch(top) {
+        case "Mathematics":
+          suggestion = "📘 Based on your top subject <strong>Mathematics</strong>, consider streams like <strong>B.Sc (Mathematics), Engineering, Actuarial Science, Data Science, or Commerce with Maths</strong>.";
+          break;
+        case "Hindi":
+          suggestion = "📗 Your top subject is <strong>Hindi</strong>. You can pursue careers in <strong>Journalism, Literature, Translation, Civil Services, or Teaching</strong>.";
+          break;
+        case "English":
+          suggestion = "📙 Excelling in <strong>English</strong> opens doors to <strong>Content Writing, Journalism, Teaching, Public Relations, or Law</strong>.";
+          break;
+        case "Social Studies":
+          suggestion = "📕 With <strong>Social Studies</strong> as your strength, you might consider <strong>Commerce, Humanities, Law, Political Science, or Civil Services</strong>.";
+          break;
+        case "Physics":
+          suggestion = "🔬 Your strength in <strong>Physics</strong> suits fields like <strong>Engineering, Research, Architecture, or Physical Sciences</strong>.";
+          break;
+        case "Chemistry":
+          suggestion = "⚗️ Excelling in <strong>Chemistry</strong> can lead you to careers in <strong>Pharmacy, Medicine, Chemical Engineering, or Environmental Science</strong>.";
+          break;
+        case "Science":
+          suggestion = "🔬 With <strong>Science</strong> as your top subject, consider streams like <strong>Medical, Engineering, Biotechnology, or Environmental Science</strong>.";
+          break;
+        default:
+          suggestion = `📘 You're good in <strong>${top}</strong>. Explore career paths related to this subject.`;
+          break;
+      }
+
+      suggestionBox.innerHTML = suggestion;
+    }
+  </script>
+</body>
+</html>

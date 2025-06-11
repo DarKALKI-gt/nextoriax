@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Form</title>
+  <link rel="stylesheet" href="secondpag.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Student Profile & Career Data Form</h1>
+    <form id="studentForm">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="date" name="dob" placeholder="Date of Birth" required>
+        <select name="gender" required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <input type="text" name="location" placeholder="City/State" required>
+        <input type="text" name="pincode" placeholder="PIN Code" required>
+        <input type="email" name="email" placeholder="Email ID" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="language" required>
+          <option value="">Preferred Language</option>
+          <option>English</option>
+          <option>Hindi</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Academic Information</legend>
+        <select name="classLevel" required>
+          <option value="">Current Class/Year</option>
+          <option>10th</option>
+          <option>12th</option>
+          <option>1st Year UG</option>
+          <option>2nd Year UG</option>
+          <option>3rd Year UG</option>
+        </select>
+        <select name="stream" required>
+          <option value="">Stream</option>
+          <option>Science</option>
+          <option>Commerce</option>
+          <option>Arts</option>
+        </select>
+        <input type="text" name="board" placeholder="Education Board (CBSE/State/etc.)" required>
+        <input type="text" name="subjects" placeholder="Subjects Taken (comma-separated)" required>
+        <input type="number" name="marks10" placeholder="10th % or CGPA" required>
+        <input type="number" name="marks12" placeholder="12th % or CGPA">
+        <input type="text" name="medium" placeholder="Medium of Study (English/Hindi/etc.)">
+        <input type="checkbox" name="dropYear"> Took a Drop Year?
+      </fieldset>
+
+      <fieldset>
+        <legend>Interest & Personality</legend>
+        <input type="text" name="hobbies" placeholder="Hobbies / Free Time Activities">
+        <textarea name="excitement" placeholder="What excites you most?"></textarea>
+        <textarea name="roleModel" placeholder="Who is your role model and why?"></textarea>
+        <textarea name="strengths" placeholder="Your strengths and weaknesses"></textarea>
+        <textarea name="careerGoal" placeholder="Any specific career dream or goal?"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferences & Constraints</legend>
+        <select name="jobType">
+          <option value="">Preferred Job Type</option>
+          <option>Government</option>
+          <option>Private</option>
+          <option>Startup</option>
+          <option>Freelance</option>
+        </select>
+        <input type="text" name="locationPreference" placeholder="Preferred Job Location">
+        <input type="text" name="budget" placeholder="Budget for Higher Education">
+        <label><input type="checkbox" name="relocate"> Willing to Relocate?</label>
+        <input type="text" name="workEnvironment" placeholder="Preferred Work Environment (Office/Field/etc.)">
+      </fieldset>
+
+      <fieldset>
+        <legend>Skills & Activities</legend>
+        <input type="text" name="skills" placeholder="Known Skills (Coding, Writing, Drawing...)">
+        <input type="text" name="certifications" placeholder="Any Certifications (comma-separated)">
+        <textarea name="achievements" placeholder="Olympiads/Competitions/Volunteering etc."></textarea>
+        <input type="text" name="languagesKnown" placeholder="Languages Known">
+      </fieldset>
+
+      <fieldset>
+        <legend>Other</legend>
+        <textarea name="parentalInfluence" placeholder="Any career pressure from parents?"></textarea>
+        <textarea name="dailySchedule" placeholder="Describe your daily routine briefly"></textarea>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+       <button class="Next Step" onclick="window.location.href='thirdpage.html'">Next Step</button>
+    </form>
+  </div>
+</body>
+</html>

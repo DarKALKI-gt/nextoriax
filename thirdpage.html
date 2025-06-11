@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Qualification</title>
+  <link rel="stylesheet" href="thirdpag.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Select Your Highest Qualification</h1>
+    <form id="qualificationForm">
+      <label>
+        <input type="radio" name="qualification" value="10th Passed" required> 10th Passed
+      </label><br>
+      <label>
+        <input type="radio" name="qualification" value="12th Passed"> 12th Passed
+      </label><br>
+      <label>
+        <input type="radio" name="qualification" value="Graduate"> Graduate
+      </label><br><br>
+
+      <button type="button" onclick="goNext()">Next</button>
+    </form>
+  </div>
+
+  <script>
+    function goNext() {
+      const selected = document.querySelector('input[name="qualification"]:checked');
+      if (selected) {
+        const value = selected.value;
+        if (value === "10th Passed") {
+          window.location.href = "paper10th.html";
+        } else if (value === "12th Passed") {
+          window.location.href = "paper12.html";
+        } else if (value === "Graduate") {
+          window.location.href = "papergraduate.html";
+        }
+      } else {
+        alert("Please select your qualification before continuing.");
+      }
+    }
+  </script>
+</body>
+</html>

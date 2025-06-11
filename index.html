@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Counseling | Login & Signup</title>
+  <link rel="stylesheet" href="Index.css" />
+  <script src="Index.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2 id="form-title">Login</h2>
+
+      <form id="auth-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+
+        <div class="input-group" id="name-group" style="display: none">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" />
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="toggle-text">
+          Don't have an account?
+          <a href="#" id="toggle-link">Sign Up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const toggleLink = document.getElementById("toggle-link");
+    const formTitle = document.getElementById("form-title");
+    const authForm = document.getElementById("auth-form");
+    const nameGroup = document.getElementById("name-group");
+    const submitBtn = authForm.querySelector(".btn");
+
+    let isLogin = true;
+
+    toggleLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      isLogin = !isLogin;
+
+      formTitle.textContent = isLogin ? "Login" : "Sign Up";
+      toggleLink.textContent = isLogin ? "Sign Up" : "Login";
+      submitBtn.textContent = isLogin ? "Login" : "Sign Up";
+
+      nameGroup.style.display = isLogin ? "none" : "block";
+    });
+  </script>
+</body>
+</html>
